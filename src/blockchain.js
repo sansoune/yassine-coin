@@ -3,6 +3,7 @@ const Block = require('./block')
 class Blockchain {
     constructor() {
         this.chain = [Block.genesis()]
+        this.pendingTransactions = []
     }
 
     AddBlock(data) {
@@ -12,13 +13,27 @@ class Blockchain {
 
         return block
     }
+    isValidChain() {
+        if(JSON.stringify(this.chain[0]) !== JSON.stringify(Block.genesis())) return false;
+    
+        for (let i=1; i<this.chain.length; i++) {
+          const block = this.chain[i];
+          const lastBlock = this.chain[i-1];
+    
+          if (block.lastHash !== lastBlock.Hash ||
+              block.Hash !== Block.blockHash(block)) {
+            return false;
+          }
+        }
+    
+        return true;
+    }
 
     createTransaction(transaction) {
         this.pendingTransactions.push(transaction)
         this.AddBlock(transaction)
         const newBlenceReciver = this.getBalence(transaction.toAdress) + transaction.amount
         const newBalenceSender = this.getBalence(transaction.fromAdress) - transaction.amount
-        console.log(newBalenceSender)
         this.AddBlock({adress: transaction.toAdress, balence: newBlenceReciver})
         this.AddBlock({adress: transaction.fromAdress, balence: newBalenceSender})
     }
