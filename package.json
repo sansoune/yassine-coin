@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "nodemon ./test/dev-test.js",
-    "jest": "jest --watchAll "
+    "jest": "jest --watchAll ",
+    "start": "node ./app/app.js",
+    "dev": "nodemon ./app/app.js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +18,8 @@
   },
   "dependencies": {
     "crypto-js": "^4.1.1",
-    "elliptic": "^6.5.4"
+    "dotenv": "^10.0.0",
+    "elliptic": "^6.5.4",
+    "express": "^4.17.2"
   }
 }

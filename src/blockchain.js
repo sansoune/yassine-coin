@@ -25,7 +25,7 @@ class Blockchain {
             return false;
           }
         }
-    
+        
         return true;
     }
 
