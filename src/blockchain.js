@@ -1,4 +1,6 @@
 const Block = require('./block')
+const Transaction = require('./transaction')
+
 
 class Blockchain {
     constructor() {
@@ -29,7 +31,8 @@ class Blockchain {
         return true;
     }
 
-    createTransaction(transaction) {
+    createTransaction(sender, recepiant, amount) {
+        const transaction = new Transaction(sender, recepiant, amount)
         this.pendingTransactions.push(transaction)
         this.AddBlock(transaction)
         const newBlenceReciver = this.getBalence(transaction.toAdress) + transaction.amount

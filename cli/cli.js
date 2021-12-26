@@ -1,22 +1,13 @@
-import arg from 'arg'
+import { exec } from 'child_process'
 
-function passeArgIntoOptions(rawargs) {
-    const args = arg(
-        {
-            '--yes': Boolean,
-            '-y': '--yes'
-        }, 
-        {
-            argv: rawargs.slice(2)
-        }
-    )
-    return{
-        skiPrompt: args['--yes'] || false,
-        template: args._[0]
-    }
-}
 
 export function cli(args) {
-    let options = passeArgIntoOptions(args)
-    console.log(options)
+    const argm = args.slice(2)
+    if (argm[0] === undefined) {
+        exec('curl 127.0.0.1:3000', (err, stdout,stderr) => {
+            console.log(stdout)
+        })
+    }else {
+        console.log(argm[0])
+    }
 }
