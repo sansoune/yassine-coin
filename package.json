@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "create-project": "/cli/bin/create-project"
+  },
   "scripts": {
     "test": "nodemon ./test/dev-test.js",
     "jest": "jest --watchAll ",
@@ -17,9 +20,12 @@
     "nodemon": "^2.0.15"
   },
   "dependencies": {
+    "arg": "^5.0.1",
     "crypto-js": "^4.1.1",
     "dotenv": "^10.0.0",
     "elliptic": "^6.5.4",
-    "express": "^4.17.2"
+    "esm": "^3.2.25",
+    "express": "^4.17.2",
+    "inquirer": "^8.2.0"
   }
 }
