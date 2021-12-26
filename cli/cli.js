@@ -7,7 +7,11 @@ export function cli(args) {
         exec('curl 127.0.0.1:3000', (err, stdout,stderr) => {
             console.log(stdout)
         })
+    }else if(argm[0] === '--find' || argm[0] === '-f'){
+        exec(`curl 127.0.0.1:3000/filter/${argm[1]}`, (err, stdout, stderr) => {
+            console.log(stdout)
+        })
     }else {
-        console.log(argm[0])
+        console.log('none')
     }
 }
