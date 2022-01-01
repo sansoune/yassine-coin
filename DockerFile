@@ -1,12 +1,13 @@
 FROM node:16
 
-WORKDIR /app
+WORKDIR /main
 COPY package*.json ./
 RUN npm i
 ENV PORT=3000
-COPY ./app ./src
+COPY ./app /main/
+COPY ./src /main/
 EXPOSE 3000
-CMD [ "npm start" ]
+CMD [ "node", "./app/app.json" ]
 
 
 
