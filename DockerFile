@@ -4,10 +4,11 @@ WORKDIR /main
 COPY package*.json ./
 RUN npm i
 ENV PORT=3000
-COPY ./app /main/
-COPY ./src /main/
+COPY ./app /main/app/
+COPY ./src /main/src/
 EXPOSE 3000
-CMD [ "node", "./app/app.json" ]
+
+CMD [ "node", "./app/app.js" ]
 
 
 
