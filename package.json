@@ -26,6 +26,6 @@
     "elliptic": "^6.5.4",
     "esm": "^3.2.25",
     "express": "^4.17.2",
-    "inquirer": "^8.2.0"
+    "inquirer": "^8.2.1"
   }
 }
