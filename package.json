@@ -20,7 +20,7 @@
     "nodemon": "^2.0.15"
   },
   "dependencies": {
-    "arg": "^5.0.1",
+    "arg": "^5.0.2",
     "crypto-js": "^4.1.1",
     "dotenv": "^10.0.0",
     "elliptic": "^6.5.4",
