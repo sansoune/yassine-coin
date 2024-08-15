@@ -23,7 +23,7 @@
     "arg": "^5.0.1",
     "crypto-js": "^4.1.1",
     "dotenv": "^10.0.0",
-    "elliptic": "^6.5.4",
+    "elliptic": "^6.5.7",
     "esm": "^3.2.25",
     "express": "^4.17.2",
     "inquirer": "^8.2.0"
